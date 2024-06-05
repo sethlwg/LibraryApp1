@@ -25,7 +25,7 @@ namespace LibraryApp1.Pages
                 new Book { Id = 4, Title = "Moby Dick", Author = "Herman Melville", Year = 1851, CopyrightInfo = "© 1851 by Herman Melville" }
             };
 
-            Book = allBooks.FirstOrDefault(b => b.Id == id);
+            Book = allBooks?.FirstOrDefault(b => b.Id == id);
 
             if (Book == null)
             {
