@@ -5,4 +5,15 @@ public class Book
     public string Author { get; set; }
     public int Year { get; set; }
     public string CopyrightInfo { get; set; }
+    protected Category Category {get; set; }
+
+
+    public Book () {
+        Title = string.Empty;
+        Id = 0;
+        Author = string.Empty;
+        Year = 0;
+        CopyrightInfo = string.Empty;
+    }
 }
+
