@@ -7,6 +7,14 @@ public class Book
     public string CopyrightInfo { get; set; }
     protected Category Category {get; set; }
 
+    public bool IsCheckedOut {get; set;}
+
+    public DateTime CheckOutDateAndTime {get; set;} //CheckOutDateandTime is of type DateTime
+
+
+
+    
+
 
     public Book () {
         Title = string.Empty;

@@ -8,6 +8,13 @@
     <h1 class="display-4">Welcome to LWG Library World!</h1>
 </div>
 
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
 <form method="get">
     <div class="form-group">
         <label for="search">Search for Books:</label>
@@ -32,14 +39,23 @@
                     <td>@book.Title</td>
                     <td>
                         <a href="/details/@book.Id" class="btn btn-info">Details</a>
-                        
+                         @if (!book.IsCheckedOut)
+                            {
+                                <a href="/checkout/@book.Id" class="btn btn-primary">Checkout</a>
+                            }
+                            else
+                            {
+                                <span class="badge badge-secondary">Checked Out</span>
+                            }
+                            
                     </td>
                 </tr>
             }
         </tbody>
+  
     </table>
-}
+} 
 else
 {
     <p>No books found.</p>
-}
+} 

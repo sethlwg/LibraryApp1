@@ -1,4 +1,7 @@
+using System.ComponentModel.Design;
+using LibraryApp1.Migrations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 public class LibraryDbContext : DbContext
 {
@@ -15,8 +18,21 @@ public class LibraryDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Book>(entity => { entity.Property(e => e.Id).IsRequired();});
+modelBuilder.Entity<Book>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Title).IsRequired();
+            entity.Property(e => e.Author).IsRequired();
+            // Additional configurations if needed
+        });
 
+        modelBuilder.Entity<Users>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Name).IsRequired();
+            entity.Property(e => e.EmailAddress).IsRequired();
+            // Additional configurations if needed
+        });
 
         modelBuilder.Entity<Book>().HasData(
             new Book { Id = 1, Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", Year = 1925, CopyrightInfo = "© 1925 by F. Scott Fitzgerald" },
@@ -26,4 +42,8 @@ public class LibraryDbContext : DbContext
 
     }
     public DbSet<Book> Books {get; set;}
+    public DbSet<Users> User{get;set;}
+    // public DbSet<IsCheckedOut> IsCheckedOut {get;set;}
+    
+
 }

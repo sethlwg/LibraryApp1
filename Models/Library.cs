@@ -13,6 +13,8 @@ public class Library
     public string Location {get; set;}
 }
 
+//public bool IsCheckedOut {get; set;}
+
 }
 
 

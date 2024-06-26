@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\sethl\\Working\\C#Project\\NewWebApp\\LibraryApp1\\wwwroot\\images\\TheGreatGatsby.jpg",
+      "PackagePath": "staticwebassets\\images\\TheGreatGatsby.jpg"
+    },
+    {
       "Id": "C:\\Users\\sethl\\Working\\C#Project\\NewWebApp\\LibraryApp1\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

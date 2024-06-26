@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<LibraryDbContext>(options =>
     options.UseInMemoryDatabase("LibraryDb"));
+builder.Services.AddScoped<LibraryService>();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
 

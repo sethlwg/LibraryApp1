@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I+GQtKNop3n7JJFvlZiBVxvrf2HY27Bh+6cmkVDBTOc=",
+  "Hash": "Z4fnxaPFbLczVCl9bYVZ3OpCLhUU++GYiDKg8dQrWKA=",
   "Source": "LibraryApp1",
   "BasePath": "_content/LibraryApp1",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\sethl\\Working\\C#Project\\NewWebApp\\LibraryApp1\\wwwroot\\images\\TheGreatGatsby.jpg",
+      "SourceId": "LibraryApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sethl\\Working\\C#Project\\NewWebApp\\LibraryApp1\\wwwroot\\",
+      "BasePath": "_content/LibraryApp1",
+      "RelativePath": "images/TheGreatGatsby.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\TheGreatGatsby.jpg"
     },
     {
       "Identity": "C:\\Users\\sethl\\Working\\C#Project\\NewWebApp\\LibraryApp1\\wwwroot\\js\\site.js",
