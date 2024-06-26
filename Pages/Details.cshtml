@@ -1,0 +1,45 @@
+@page "/details/{id:int}"
+@model DetailsModel
+@{
+    ViewData["Title"] = "Book Details";
+} 
+
+@if (Model.Book != null)
+{
+    <div>
+    @if (Model.Book.Id == 1)
+        {
+            <img src="~/images/TheGreatGatsby.jpg" alt="The Great Gatsby" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 2)
+        {
+            <img src="~/images/ToKillAMockingBird.jpg" alt="To Kill a Mockingbird" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 3)
+        {
+            <img src="~/images/1984.jpg" alt="1984" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 4)
+        {
+            <img src="~/images/MobyDick.jpg" alt="Moby Dick" style="max-width: 70%; height: auto;" />
+        }    
+        </div>
+        
+    <dl class="row">
+        <dt class="col-sm-2">Title</dt>
+        <dd class="col-sm-10">@Model.Book.Title</dd>
+
+        <dt class="col-sm-2">Author</dt>
+        <dd class="col-sm-10">@Model.Book.Author</dd>
+
+        <dt class="col-sm-2">Year</dt>
+        <dd class="col-sm-10">@Model.Book.Year</dd>
+
+        <dt class="col-sm-2">Copyright Info</dt>
+        <dd class="col-sm-10">@Model.Book.CopyrightInfo</dd>
+    </dl>
+}
+else
+{
+    <p>Book not found.</p>
+}

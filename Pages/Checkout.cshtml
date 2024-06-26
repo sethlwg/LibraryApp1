@@ -1,0 +1,45 @@
+@page "/checkout/{id:int}"
+@model CheckoutModel
+
+<h2> Checkout Book </h2>
+
+
+@if (Model.Book != null)
+{
+    <div>
+        @if (Model.Book.Id == 1)
+        {
+            <img src="~/images/TheGreatGatsby.jpg" alt="The Great Gatsby" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 2)
+        {
+            <img src="~/images/ToKillAMockingBird.jpg" alt="To Kill a Mockingbird" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 3)
+        {
+            <img src="~/images/1984.jpg" alt="1984" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 4)
+        {
+            <img src="~/images/MobyDick.jpg" alt="Moby Dick" style="max-width: 70%; height: auto;" />
+        }    </div>
+    <div>
+        <h3>@Model.Book.Title</h3>
+        <p>Author: @Model.Book.Author</p>
+        <p>Year: @Model.Book.Year</p>
+        <p>Copyright Info: @Model.Book.CopyrightInfo</p>
+    </div>
+
+    
+}
+
+
+ <form method="post">
+        <input type="hidden" name="BookId" value="@Model.Book.Id" />
+        <div class="form-group">
+            <label for="UserId">User ID:</label>
+            <input type="number" name="UserId" id="UserId" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Checkout</button>
+    </form>
+
