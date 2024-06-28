@@ -22,7 +22,8 @@
         else if (Model.Book.Id == 4)
         {
             <img src="~/images/MobyDick.jpg" alt="Moby Dick" style="max-width: 70%; height: auto;" />
-        }    </div>
+        }    
+        </div>
     <div>
         <h3>@Model.Book.Title</h3>
         <p>Author: @Model.Book.Author</p>
@@ -33,7 +34,6 @@
     
 }
 
-
  <form method="post">
         <input type="hidden" name="BookId" value="@Model.Book.Id" />
         <div class="form-group">
@@ -43,3 +43,5 @@
         <button type="submit" class="btn btn-primary">Checkout</button>
     </form>
 
+    <a href="/" class="btn btn-secondary mb-3 back-button">Back</a>
+</div>
