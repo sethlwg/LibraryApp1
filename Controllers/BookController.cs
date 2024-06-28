@@ -36,6 +36,15 @@ namespace LibraryApp1.Controllers
             return Ok(book);
         }
 
+        [HttpPost]
+        public async Task<ActionResult<Book>> PostBook(Book book)
+        {
+            _context.Books.Add(book);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetBookById), new {id = book.Id}, book);
+        }
+
         // PUT: api/details/1
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBook(int id, Book book)

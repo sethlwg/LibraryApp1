@@ -2,10 +2,36 @@
 @model DetailsModel
 @{
     ViewData["Title"] = "Book Details";
-}
-
+} 
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
 @if (Model.Book != null)
 {
+    <div class="book-container">
+        
+        <a href="/" class="btn btn-secondary mb-3 back-button">Back</a>
+
+    @if (Model.Book.Id == 1)
+        {
+            <img src="~/images/TheGreatGatsby.jpg" alt="The Great Gatsby" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 2)
+        {
+            <img src="~/images/ToKillAMockingBird.jpg" alt="To Kill a Mockingbird" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 3)
+        {
+            <img src="~/images/1984.jpg" alt="1984" style="max-width: 70%; height: auto;" />
+        }
+        else if (Model.Book.Id == 4)
+        {
+            <img src="~/images/MobyDick.jpg" alt="Moby Dick" style="max-width: 70%; height: auto;" />
+        }    
+        
     <dl class="row">
         <dt class="col-sm-2">Title</dt>
         <dd class="col-sm-10">@Model.Book.Title</dd>
@@ -19,8 +45,14 @@
         <dt class="col-sm-2">Copyright Info</dt>
         <dd class="col-sm-10">@Model.Book.CopyrightInfo</dd>
     </dl>
+    </div>
+
 }
 else
 {
     <p>Book not found.</p>
 }
+</body>
+
+</html>
+

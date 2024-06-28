@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nS4mwfuXt70=",
+  "dgSpecHash": "PUk91SKWG3Y=",
   "success": true,
-  "projectFilePath": "c:\\Users\\sethl\\Working\\C#Project\\NewWebApp\\LibraryApp1\\LibraryApp1.csproj",
+  "projectFilePath": "C:\\Users\\sethl\\Working\\C#Project\\NewWebApp\\LibraryApp1\\LibraryApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sethl\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\sethl\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

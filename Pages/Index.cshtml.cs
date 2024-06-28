@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,31 +8,38 @@ namespace LibraryApp1.Pages
 {
     public class IndexModel : PageModel
     {
+        private LibraryService _libraryService;// declare a private field to hold reference to LibraryService
+        public IndexModel(LibraryService libraryService)// constructor for IndexModel and has instance of libraryService
+        {
+            _libraryService = libraryService;
+        }
         public IList<Book> Books { get; set; }
         public string SearchTerm { get; set; }
 
         public void OnGet(string search)
         {
+        
             SearchTerm = search;
+             Books = _libraryService.GetBooks(search);
 
-            // Hard-coded list of books for demonstration purposes
-            var allBooks = new List<Book>
-            {
-                new Book { Id = 1, Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", Year = 1925, CopyrightInfo = "© 1925 by F. Scott Fitzgerald" },
-                new Book { Id = 2, Title = "To Kill a Mockingbird", Author = "Harper Lee", Year = 1960, CopyrightInfo = "© 1960 by Harper Lee" },
-                new Book { Id = 3, Title = "1984", Author = "George Orwell", Year = 1949, CopyrightInfo = "© 1949 by George Orwell" },
-                new Book { Id = 4, Title = "Moby Dick", Author = "Herman Melville", Year = 1851, CopyrightInfo = "© 1851 by Herman Melville" }
-            };
+        }
 
-            // Search functionality
-            if (!string.IsNullOrEmpty(search))
+        public IActionResult OnGetCheckout(int id)
+        {
+            bool success = _libraryService.Checkout(id); //call method 
+
+             if (success)
             {
-                Books = allBooks.Where(b => b.Title.Contains(search) || b.Author.Contains(search)).ToList();
+                TempData["Message"] = "Book checked out successfully.";
             }
             else
             {
-                Books = allBooks;
+                TempData["Message"] = "Book not found.";
             }
+
+            return RedirectToPage();
+            //(new {search = SearchTerm});
         }
     }
 }
+
