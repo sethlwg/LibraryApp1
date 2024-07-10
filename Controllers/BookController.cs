@@ -8,7 +8,7 @@ namespace LibraryApp1.Controllers
     public class BooksController : ControllerBase
     { 
         private readonly LibraryDbContext _context;
-
+        private readonly LibraryService _libraryService;
         public BooksController(LibraryDbContext context)
         {
             _context = context;
@@ -34,6 +34,17 @@ namespace LibraryApp1.Controllers
             }
 
             return Ok(book);
+        }
+
+        [HttpPost("checkout")]
+        public async Task<IActionResult> Checkout(int bookId, int userId)
+        {
+        var result = await _libraryService.Checkout(bookId, userId);
+        if (result)
+        {
+            return Ok();
+        }
+        return NotFound();
         }
 
         [HttpPost]

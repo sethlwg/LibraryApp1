@@ -11,7 +11,7 @@ public class Book
 
     public DateTime CheckOutDateAndTime {get; set;} //CheckOutDateandTime is of type DateTime
 
-
+    // public string CheckedOutBy {get; set;}
 
     
 

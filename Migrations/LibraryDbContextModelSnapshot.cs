@@ -87,6 +87,16 @@ namespace LibraryApp1.Migrations
                             IsCheckedOut = false,
                             Title = "Moby Dick",
                             Year = 1851
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Author = "Suzanne Collins",
+                            CheckOutDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CopyrightInfo = "© 2008 by Suzanne Collins",
+                            IsCheckedOut = false,
+                            Title = "The Hunger Games",
+                            Year = 2008
                         });
                 });
 
@@ -107,6 +117,26 @@ namespace LibraryApp1.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EmailAddress = "john.doe@example.com",
+                            Name = "John Doe"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            EmailAddress = "jane.smith@example.com",
+                            Name = "Jane Smith"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            EmailAddress = "james.hammington@example.com",
+                            Name = "James Hammington"
+                        });
                 });
 #pragma warning restore 612, 618
         }

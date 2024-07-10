@@ -15,6 +15,12 @@
     </div>
 }
 
+@* <h2>Library Statistics</h2>
+<ul>
+    <li>Total Books: @Model.TotalBooks</li>
+    <li>Books Checked Out: @Model.CheckedOutBooks</li>
+</ul> *@
+
 <form method="get">
     <div class="form-group">
         <label for="search">Search for Books:</label>
@@ -39,8 +45,14 @@
                     <td>@book.Title</td>
                     <td>
                         <a href="/details/@book.Id" class="btn btn-info">Details</a>
+                        
                          @if (!book.IsCheckedOut)
                             {
+                            @* <form method="post" asp-page-handler="Checkout" class="d-inline">
+                                <input type="hidden" name="bookId" value="@book.Id" />
+                                <input type="number" name="userId" class="form-control" placeholder="User ID" required />
+                                <button type="submit" class="btn btn-primary">Checkout</button>
+                            </form> *@
                                 <a href="/checkout/@book.Id" class="btn btn-primary">Checkout</a>
                             }
                             else
@@ -59,3 +71,5 @@ else
 {
     <p>No books found.</p>
 } 
+
+

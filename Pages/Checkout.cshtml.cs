@@ -19,6 +19,10 @@ namespace LibraryApp1.Pages
 
         public Book Book { get; set; }
         public Users Users {get; set;}
+        [BindProperty]
+        public int BookId {get; set;}
+        [BindProperty]
+        public int UserId {get; set;}
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -68,13 +72,13 @@ namespace LibraryApp1.Pages
             }
            catch (Exception ex)
            {
-             Console.WriteLine($"Exception: {ex.Message}");
+            Console.WriteLine($"Exception: {ex.Message}");
             Console.WriteLine($"Stack Trace: {ex.StackTrace}");
             TempData["Message"] = "An error occurred while checking out the book.";
             return Page();
            }
         }
     
-     }
+    }
 }
     

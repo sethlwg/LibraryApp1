@@ -1,0 +1,37 @@
+@page
+@model LibraryApp1.Pages.LibraryStatisticsModel
+@{
+    ViewData["Title"] = "Library Statistics";
+}
+
+<h1>Library Statistics</h1>
+
+<div class="text-center">
+    <h2>Total Books: @Model.TotalBooks</h2>
+    <h2>Checked Out Books: @Model.CheckedOutBooks</h2>
+</div>
+
+@if (Model.CheckedOutBooksList != null && Model.CheckedOutBooksList.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                @* <th>Checked Out By</th> *@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.CheckedOutBooksList)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    @* <td>@book.CheckedOutBy</td> *@
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No books are currently checked out.</p>
+}

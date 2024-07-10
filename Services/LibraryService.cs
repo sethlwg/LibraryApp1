@@ -35,4 +35,20 @@ public class LibraryService
                 return _context.Books.ToList();
             }
     }
+
+    public int GetTotalBooksCount() {
+            return _context.Books.Count();
+        }
+
+    public int GetCheckedOutBooksCount() 
+        {
+            return _context.Books.Count(b => b.IsCheckedOut);
+        }
+
+    public IList<Book> GetCheckedOutBooks()
+{
+    return _context.Books.Where(b => b.IsCheckedOut).ToList();
+}
+
+    
 }
