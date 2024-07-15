@@ -25,6 +25,7 @@ modelBuilder.Entity<Book>(entity =>
             entity.Property(e => e.Author).IsRequired();
             entity.Property(e => e.IsCheckedOut).IsRequired();
             entity.Property(e => e.CheckOutDateAndTime).IsRequired();
+            entity.Property(e => e.ReturnDateAndTime).IsRequired();
             // Additional configurations if needed
         });
 

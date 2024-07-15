@@ -11,6 +11,8 @@ public class Book
 
     public DateTime CheckOutDateAndTime {get; set;} //CheckOutDateandTime is of type DateTime
 
+    public DateTime ReturnDateAndTime {get; set;}
+
     // public string CheckedOutBy {get; set;}
 
     

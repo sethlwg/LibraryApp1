@@ -36,6 +36,9 @@ namespace LibraryApp1.Migrations
                     b.Property<bool>("IsCheckedOut")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("ReturnDateAndTime")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -55,6 +58,7 @@ namespace LibraryApp1.Migrations
                             CheckOutDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CopyrightInfo = "© 1925 by F. Scott Fitzgerald",
                             IsCheckedOut = false,
+                            ReturnDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "The Great Gatsby",
                             Year = 1925
                         },
@@ -65,6 +69,7 @@ namespace LibraryApp1.Migrations
                             CheckOutDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CopyrightInfo = "© 1960 by Harper Lee",
                             IsCheckedOut = false,
+                            ReturnDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "To Kill a Mockingbird",
                             Year = 1960
                         },
@@ -75,6 +80,7 @@ namespace LibraryApp1.Migrations
                             CheckOutDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CopyrightInfo = "© 1949 by George Orwell",
                             IsCheckedOut = false,
+                            ReturnDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "1984",
                             Year = 1949
                         },
@@ -85,6 +91,7 @@ namespace LibraryApp1.Migrations
                             CheckOutDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CopyrightInfo = "© 1851 by Herman Melville",
                             IsCheckedOut = false,
+                            ReturnDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Moby Dick",
                             Year = 1851
                         },
@@ -95,6 +102,7 @@ namespace LibraryApp1.Migrations
                             CheckOutDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CopyrightInfo = "© 2008 by Suzanne Collins",
                             IsCheckedOut = false,
+                            ReturnDateAndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "The Hunger Games",
                             Year = 2008
                         });

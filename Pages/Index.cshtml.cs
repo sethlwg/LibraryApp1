@@ -45,6 +45,21 @@ namespace LibraryApp1.Pages
             return RedirectToPage();
         }
 
+        public async Task<IActionResult> OnPostReturn(int bookId)
+        {
+            var success = await _libraryService.ReturnBook(bookId);
+            
+            if (success)
+            {
+                TempData["Message"] = "Book returned successfully.";
+            }
+            else
+            {
+                TempData["Message"] = "Book not found or not checked out.";
+            }
+            
+            return RedirectToPage();
+        }
         
     }
 }

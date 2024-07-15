@@ -24,7 +24,8 @@ namespace LibraryApp1.Migrations
                     Year = table.Column<int>(type: "INTEGER", nullable: false),
                     CopyrightInfo = table.Column<string>(type: "TEXT", nullable: false),
                     IsCheckedOut = table.Column<bool>(type: "INTEGER", nullable: false),
-                    CheckOutDateAndTime = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    CheckOutDateAndTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ReturnDateAndTime = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,14 +48,14 @@ namespace LibraryApp1.Migrations
 
             migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "Id", "Author", "CheckOutDateAndTime", "CopyrightInfo", "IsCheckedOut", "Title", "Year" },
+                columns: new[] { "Id", "Author", "CheckOutDateAndTime", "CopyrightInfo", "IsCheckedOut", "ReturnDateAndTime", "Title", "Year" },
                 values: new object[,]
                 {
-                    { 1, "F. Scott Fitzgerald", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 1925 by F. Scott Fitzgerald", false, "The Great Gatsby", 1925 },
-                    { 2, "Harper Lee", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 1960 by Harper Lee", false, "To Kill a Mockingbird", 1960 },
-                    { 3, "George Orwell", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 1949 by George Orwell", false, "1984", 1949 },
-                    { 4, "Herman Melville", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 1851 by Herman Melville", false, "Moby Dick", 1851 },
-                    { 5, "Suzanne Collins", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 2008 by Suzanne Collins", false, "The Hunger Games", 2008 }
+                    { 1, "F. Scott Fitzgerald", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 1925 by F. Scott Fitzgerald", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "The Great Gatsby", 1925 },
+                    { 2, "Harper Lee", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 1960 by Harper Lee", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "To Kill a Mockingbird", 1960 },
+                    { 3, "George Orwell", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 1949 by George Orwell", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "1984", 1949 },
+                    { 4, "Herman Melville", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 1851 by Herman Melville", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Moby Dick", 1851 },
+                    { 5, "Suzanne Collins", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "© 2008 by Suzanne Collins", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "The Hunger Games", 2008 }
                 });
 
             migrationBuilder.InsertData(

@@ -1,0 +1,39 @@
+@page "/return/{id:int}"
+@model LibraryApp1.Pages.ReturnModel
+@{
+    ViewData["Title"] = "ReturnBook";
+}
+
+<h1>@ViewData["Return Book"]</h1>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@if (Model.Book != null)
+{
+    <div>
+        <h2>@Model.Book.Title</h2>
+        <p><strong>Author:</strong> @Model.Book.Author</p>
+        <p><strong>Year:</strong> @Model.Book.Year</p>
+        <p><strong>Copyright Info:</strong> @Model.Book.CopyrightInfo</p>
+        <img src="@Model.GetBookImageUrl(Model.Book)" alt="Book Image" style="max-width: 200px;" /> <!-- Display book image -->    </div>
+
+<form method="post">
+    <div class="form-group">
+        <label for="bookId">Book ID:</label>
+        <input type="number" name="bookId" id="bookId" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-warning">Return Book</button>
+</form>
+
+}

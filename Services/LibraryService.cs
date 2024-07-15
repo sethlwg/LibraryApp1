@@ -46,9 +46,25 @@ public class LibraryService
         }
 
     public IList<Book> GetCheckedOutBooks()
-{
-    return _context.Books.Where(b => b.IsCheckedOut).ToList();
-}
+    {
+        return _context.Books.Where(b => b.IsCheckedOut).ToList();
+    }
 
+    public Book GetBookById(int bookId)
+    {
+        return _context.Books.FirstOrDefault(b => b.Id == bookId);
+    }
+    public async Task<bool> ReturnBook(int bookId)
+    {
+        var book = await _context.Books.FindAsync(bookId);
+        if (book != null && book.IsCheckedOut)
+        {
+            book.IsCheckedOut = false;
+            book.ReturnDateAndTime = DateTime.Now; //sets to a default value if books 
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        return false;//returns false if book not found or not checked out
+    }
     
 }
